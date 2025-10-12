@@ -1,58 +1,71 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="We Are Trend Topic - The world’s most inspiring and modern digital media.">
   <title>We Are Trend Topic</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png">
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="logo">We Are Trend Topic</div>
+    <div class="logo">
+      <img src="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png" alt="We Are Trend Topic Logo">
+      <h1>We Are Trend Topic</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="#">Ana Sayfa</a></li>
-        <li><a href="#">Dünya</a></li>
-        <li><a href="#">Teknoloji</a></li>
-        <li><a href="#">Spor</a></li>
-        <li><a href="#">Eğlence</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">World</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Culture</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="#">Lifestyle</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Ana Haber -->
-  <section class="main-news">
-    <img src="https://placehold.co/800x400" alt="Ana Haber">
-    <h1>Bugünün En Önemli Haberi</h1>
-    <p>Bu alanda en güncel ve önemli haberiniz görünecek. İçeriği buradan tanıtabilirsiniz...</p>
-  </section>
-
-  <!-- Trend Haberler -->
-  <section class="trend-news">
-    <h2>Trend Haberler</h2>
-    <div class="news-grid">
-      <article>
-        <img src="https://placehold.co/300x200" alt="Haber 1">
-        <h3>Trend Başlık 1</h3>
-      </article>
-      <article>
-        <img src="https://placehold.co/300x200" alt="Haber 2">
-        <h3>Trend Başlık 2</h3>
-      </article>
-      <article>
-        <img src="https://placehold.co/300x200" alt="Haber 3">
-        <h3>Trend Başlık 3</h3>
-      </article>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Redefining Global Media</h2>
+      <p>Independent journalism, inspiring stories, and the latest from around the world.</p>
+      <button onclick="scrollToNews()">Explore</button>
     </div>
   </section>
 
-  <!-- Footer -->
+  <main id="news">
+    <article class="news-card">
+      <img src="https://picsum.photos/800/400?random=1" alt="News image">
+      <div class="news-text">
+        <h3>Breaking: The Future of AI Journalism</h3>
+        <p>Artificial Intelligence is reshaping the media landscape. Discover how automation is changing the way stories are told.</p>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <img src="https://picsum.photos/800/400?random=2" alt="News image">
+      <div class="news-text">
+        <h3>Global Economy 2025: The Next Chapter</h3>
+        <p>Economists predict a shift in digital finance dominance as innovation accelerates worldwide.</p>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <img src="https://picsum.photos/800/400?random=3" alt="News image">
+      <div class="news-text">
+        <h3>Culture Meets Technology: A Digital Revolution</h3>
+        <p>From art to algorithms, see how creativity merges with science to create the new age of digital culture.</p>
+      </div>
+    </article>
+  </main>
+
   <footer>
-    <p>© 2025 We Are Trend Topic - Tüm Hakları Saklıdır</p>
+    <p>© 2025 We Are Trend Topic. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
