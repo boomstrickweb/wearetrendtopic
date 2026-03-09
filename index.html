@@ -3,142 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We Are Trend Topic: Latest updates on FRACT microblogging platform by Senan Musazadeh. Breaking technology news and global insights.">
-    <meta name="keywords" content="Senan Musazadeh, FRACT, Microblogging, Tech News, Social Media, Algorithm Noise, AI Spam">
-    <title>We Are Trend Topic | Breaking News</title>
+    <meta name="description" content="We Are Trend Topic - Global news agency covering tech, politics, and world events. Read about FRACT, the new microblogging platform by Senan Musazadeh.">
+    <title>We Are Trend Topic | Global News & Emerging Technology</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Merriweather for headlines, Inter for text -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root { 
-            --cream-bg: #FDFCF9; 
-            --pure-white: #FFFFFF; 
-            --accent-red: #8B0000; 
-            --text-main: #1A1A1A; 
-            --text-muted: #555555;
+        :root {
+            --cream-bg: #F9F7F2;
+            --pure-white: #FFFFFF;
+            --accent-red: #B91C1C;
+            --text-main: #1C1C1C;
         }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--cream-bg); 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream-bg);
             color: var(--text-main);
-            line-height: 1.6;
         }
-        h1, h2, h3, h4, .font-serif { font-family: 'Merriweather', serif; }
-        
-        .nav-link { 
-            position: relative; 
-            transition: all 0.3s ease; 
-            font-weight: 600; 
-            color: var(--text-muted); 
-            text-decoration: none;
-            letter-spacing: 0.05em;
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Merriweather', serif;
         }
-        .nav-link:hover, .nav-link.active { color: var(--text-main); }
-        .nav-link.active::after {
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #4A4A4A;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-red);
+        }
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 4px;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
             background-color: var(--accent-red);
-            border-radius: 50%;
+            transition: width 0.3s ease;
         }
-
-        .hover-lift { transition: transform 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-2px); }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .news-card {
+            background-color: var(--pure-white);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E5E1D8;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .sticky-header {
+            background-color: rgba(249, 247, 242, 0.95);
+            backdrop-filter: blur(8px);
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <!-- News Ticker / Date -->
-    <div class="border-b border-stone-200 py-2 px-4 bg-white">
-        <div class="container mx-auto flex justify-between items-center text-[10px] font-bold tracking-[0.2em] uppercase text-stone-500">
-            <div id="live-date">Monday, March 9, 2026</div>
-            <div class="flex space-x-6">
-                <span class="flex items-center"><span class="w-1.5 h-1.5 bg-red-700 rounded-full mr-2 animate-pulse"></span> LIVE: FRACT Platform Officially Launched</span>
-                <a href="https://fract.online" target="_blank" class="hover:text-black">fract.online</a>
-            </div>
+    <!-- Top Bar -->
+    <div class="bg-stone-800 text-stone-300 py-1.5 px-4 text-[10px] font-bold uppercase tracking-widest hidden md:flex justify-between items-center">
+        <div id="current-date">MONDAY, MARCH 9, 2026</div>
+        <div class="flex space-x-6">
+            <a href="#" class="hover:text-white transition">Digital Edition</a>
+            <a href="#" class="hover:text-white transition">Global Briefing</a>
+            <a href="https://fract.online" target="_blank" class="text-white border-b border-white">Visit FRACT</a>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="bg-white/80 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-8 text-center">
-            <a href="index.html" class="inline-block mb-8">
-                <img src="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png" alt="We Are Trend Topic" class="h-16 md:h-24 mx-auto object-contain">
-            </a>
-            <nav>
-                <ul class="flex flex-wrap justify-center gap-x-10 gap-y-4 text-[11px] uppercase tracking-widest border-t border-stone-100 pt-6">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="tech.html" class="nav-link">Technology</a></li>
-                    <li><a href="#" class="nav-link">Politics</a></li>
-                    <li><a href="#" class="nav-link">Business</a></li>
-                    <li><a href="#" class="nav-link">Culture</a></li>
-                    <li><a href="#" class="nav-link">Science</a></li>
-                    <li><a href="#" class="nav-link">Opinion</a></li>
+    <!-- Header & Logo -->
+    <header class="sticky-header border-b border-stone-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center mb-6">
+                <button id="mobile-menu-btn" class="md:hidden text-stone-800">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="flex-grow flex justify-center">
+                    <a href="#" onclick="navigate('Home')">
+                        <img src="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png" 
+                             alt="We Are Trend Topic Logo" 
+                             class="h-12 md:h-20 object-contain cursor-pointer hover:opacity-90 transition">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-stone-600 hover:text-black transition"><i data-lucide="search" class="w-5 h-5"></i></button>
+                    <button class="bg-stone-900 text-white px-4 py-1.5 text-xs font-bold rounded uppercase tracking-tighter">Login</button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex justify-center space-x-8 text-[12px] uppercase tracking-widest border-t border-stone-200 pt-4 pb-1">
+                    <li><a href="#" onclick="navigate('Home')" class="nav-link active" data-category="Home">Front Page</a></li>
+                    <li><a href="#" onclick="navigate('Tech')" class="nav-link" data-category="Tech">Technology</a></li>
+                    <li><a href="#" onclick="navigate('World')" class="nav-link" data-category="World">World</a></li>
+                    <li><a href="#" onclick="navigate('Politics')" class="nav-link" data-category="Politics">Politics</a></li>
+                    <li><a href="#" onclick="navigate('Business')" class="nav-link" data-category="Business">Business</a></li>
+                    <li><a href="#" onclick="navigate('Science')" class="nav-link" data-category="Science">Science</a></li>
+                    <li><a href="#" onclick="navigate('Lifestyle')" class="nav-link" data-category="Lifestyle">Lifestyle</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12 flex-grow">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-            <!-- Featured Story -->
-            <article class="lg:col-span-8 group">
-                <a href="tech.html" class="block overflow-hidden mb-6 rounded-sm">
-                    <img src="https://i.imghippo.com/files/opCb3576GlM.jpg" 
-                         class="w-full h-[500px] object-cover transition duration-1000 group-hover:scale-105" 
-                         alt="FRACT Launch by Senan Musazadeh">
-                </a>
-                <div class="max-w-3xl">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="bg-red-800 text-white text-[10px] font-black px-2 py-0.5 uppercase tracking-widest">New Launch</span>
-                        <span class="text-stone-400 text-[10px] font-bold uppercase tracking-widest">Technology</span>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tighter">
-                        <a href="tech.html" class="hover:text-stone-700 transition">Senan Musazadeh Launches FRACT: A Context-First Microblogging Platform</a>
-                    </h1>
-                    <p class="text-stone-600 text-xl font-serif italic mb-6 leading-relaxed">
-                        As algorithmic noise and AI-generated spam dominate digital spaces, FRACT introduces a lightweight model designed for human-centric discussions.
-                    </p>
-                    <div class="flex items-center space-x-4 border-t border-stone-200 pt-6">
-                        <div class="text-xs font-bold uppercase tracking-widest text-stone-500">Editorial Staff</div>
-                        <span class="text-stone-300">|</span>
-                        <a href="tech.html" class="text-xs font-black uppercase border-b-2 border-red-800 pb-0.5 hover:text-red-800 transition">Read Full Report</a>
-                    </div>
-                </div>
-            </article>
+    <!-- Mobile Nav (Hidden by default) -->
+    <div id="mobile-nav" class="hidden bg-stone-50 border-b border-stone-200 p-4 md:hidden">
+        <ul class="space-y-4 text-sm font-bold uppercase tracking-wider">
+            <li><a href="#" onclick="navigate('Home'); toggleMenu()" class="block border-b border-stone-100 pb-2">Home</a></li>
+            <li><a href="#" onclick="navigate('Tech'); toggleMenu()" class="block border-b border-stone-100 pb-2">Technology</a></li>
+            <li><a href="#" onclick="navigate('World'); toggleMenu()" class="block border-b border-stone-100 pb-2">World</a></li>
+            <li><a href="#" onclick="navigate('Politics'); toggleMenu()" class="block">Politics</a></li>
+        </ul>
+    </div>
 
-            <!-- Sidebar -->
-            <aside class="lg:col-span-4 border-l border-stone-200 pl-0 lg:pl-12">
-                <div class="sticky top-32">
-                    <h3 class="text-xs font-black uppercase tracking-[0.3em] mb-8 pb-2 border-b-2 border-black inline-block">Trending Now</h3>
-                    <div class="space-y-12">
-                        <div class="hover-lift cursor-pointer">
-                            <span class="text-stone-300 font-black text-4xl block mb-2">01</span>
-                            <h4 class="font-bold text-lg leading-snug">How context-driven UI is changing digital interactions.</h4>
-                        </div>
-                        <div class="hover-lift cursor-pointer pt-8 border-t border-stone-100">
-                            <span class="text-stone-300 font-black text-4xl block mb-2">02</span>
-                            <h4 class="font-bold text-lg leading-snug">Senan Musazadeh on the rise of independent tech projects.</h4>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Category Banner -->
+        <div id="cat-banner" class="mb-10 hidden">
+            <h1 id="cat-title" class="text-5xl font-black uppercase tracking-tighter mb-2">Category</h1>
+            <div class="h-1.5 w-24 bg-red-700 mb-4"></div>
+        </div>
+
+        <!-- News Grid -->
+        <div id="main-content" class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Content will be injected by JavaScript -->
         </div>
     </main>
 
-    <footer class="bg-white border-t border-stone-200 pt-20 pb-10">
-        <div class="container mx-auto px-4 text-center">
-            <img src="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png" alt="Logo" class="h-10 grayscale opacity-60 mx-auto mb-6">
-            <div class="text-[9px] text-stone-400 uppercase tracking-[0.3em]">
-                &copy; 2026 We Are Trend Topic Media. All Rights Reserved.
+    <!-- Footer -->
+    <footer class="bg-stone-50 border-t border-stone-200 pt-16 pb-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <img src="https://image2url.com/images/1760270246109-3f524aa9-0c53-4612-80a4-4eb3f1520a1c.png" class="h-10 mb-4 grayscale opacity-80" alt="Footer Logo">
+                    <p class="text-stone-500 text-sm leading-relaxed">Independent journalism for a complex world. Focused on technology, context, and clarity.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest mb-4">Sections</h4>
+                    <ul class="text-stone-500 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-black" onclick="navigate('Tech')">Technology</a></li>
+                        <li><a href="#" class="hover:text-black" onclick="navigate('Politics')">Politics</a></li>
+                        <li><a href="#" class="hover:text-black" onclick="navigate('World')">World News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest mb-4">About</h4>
+                    <ul class="text-stone-500 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-black">Ethics Policy</a></li>
+                        <li><a href="#" class="hover:text-black">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-black">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-stone-400">
+                        <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-black transition"></i>
+                        <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-black transition"></i>
+                        <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-black transition"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-stone-400 text-[10px] tracking-widest uppercase border-t border-stone-200 pt-8">
+                &copy; 2026 We Are Trend Topic. All Rights Reserved. Built for Clarity.
             </div>
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        // Data Store
+        const articles = [
+            {
+                id: "fract-launch",
+                title: "Senan Musazadeh Launches FRACT: A Context-First Microblogging Platform to Combat Algorithm Noise",
+                subtitle: "The new platform prioritizes clarity and human discussion over engagement metrics and AI-generated spam.",
+                content: `
+                    <p class="mb-4">A new microblogging platform called <strong>FRACT</strong> has officially launched, introducing a different approach to online conversations by focusing on context-driven discussions instead of algorithm-amplified content.</p>
+                    <p class="mb-4">Created by <strong>Senan Musazadeh</strong>, FRACT aims to address growing concerns about modern social media platforms, where algorithmic feeds and automated content increasingly dominate user timelines. Unlike traditional social networks that prioritize engagement metrics, FRACT introduces a context-first structure that organizes posts around discussions rather than viral distribution.</p>
+                    <p class="mb-4">“Social media conversations should be structured by context, not by algorithms,” said Senan Musazadeh, founder of FRACT. “We wanted to create a platform where discussions remain clear, focused, and easier to follow.”</p>
+                    <h3 class="text-xl font-bold mb-3 mt-6">A Simpler Microblogging Model</h3>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Context-first discussion structure</li>
+                        <li>Reduced algorithmic influence</li>
+                        <li>Cleaner conversation threads</li>
+                        <li>Minimalist interface focused on clarity</li>
+                    </ul>
+                    <p class="mb-4">FRACT was initially designed with users in the United States and Germany in mind. However, during its early launch phase, the platform has been made globally accessible to test infrastructure performance and user experience.</p>
+                    <p class="mt-6 font-bold">Explore the platform at: <a href="https://fract.online" target="_blank" class="text-red-700 underline">https://fract.online</a></p>
+                `,
+                excerpt: "Senan Musazadeh introduces FRACT, a minimalist microblogging alternative that puts context before algorithms.",
+                category: "Tech",
+                author: "Staff Writer",
+                time: "JUST IN",
+                image: "https://i.imghippo.com/files/opCb3576GlM.jpg",
+                featured: true
+            }
+        ];
+
+        // UI Logic
+        const mainContent = document.getElementById('main-content');
+        const catBanner = document.getElementById('cat-banner');
+        const catTitle = document.getElementById('cat-title');
+
+        function toggleMenu() {
+            document.getElementById('mobile-nav').classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+
+        function navigate(category) {
+            // Update active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.category === category) link.classList.add('active');
+            });
+
+            // Handle Banner
+            if (category === 'Home') {
+                catBanner.classList.add('hidden');
+            } else {
+                catBanner.classList.remove('hidden');
+                catTitle.textContent = category;
+            }
+
+            render(category);
+            window.scrollTo(0, 0);
+        }
+
+        function render(category) {
+            let filtered = category === 'Home' ? articles : articles.filter(a => a.category === category);
+            
+            if (filtered.length === 0) {
+                mainContent.innerHTML = `<div class="col-span-12 py-20 text-center text-stone-400 font-serif italic text-xl">More stories coming soon to this section.</div>`;
+                return;
+            }
+
+            let html = '';
+            if (category === 'Home') {
+                // Front Page Layout
+                const f = filtered[0];
+                html = `
+                    <article class="lg:col-span-8 group cursor-pointer" onclick="navigate('Tech')">
+                        <div class="mb-6 overflow-hidden">
+                            <img src="${f.image}" alt="FRACT Launch" class="w-full h-[450px] object-cover hover:scale-105 transition duration-700">
+                        </div>
+                        <span class="text-red-700 font-black text-xs uppercase tracking-widest">${f.category}</span>
+                        <h1 class="text-4xl md:text-5xl font-black mt-2 mb-4 leading-tight hover:underline">${f.title}</h1>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-4 font-serif italic">${f.subtitle}</p>
+                        <div class="flex items-center text-xs font-bold text-stone-400 space-x-2">
+                            <span>BY ${f.author.toUpperCase()}</span>
+                            <span>•</span>
+                            <span class="text-red-600">${f.time}</span>
+                        </div>
+                    </article>
+                    <aside class="lg:col-span-4 border-l border-stone-200 pl-0 lg:pl-10">
+                        <h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-6 border-b border-black pb-2">Latest Updates</h3>
+                        <div class="space-y-8">
+                            <div class="border-b border-stone-100 pb-6">
+                                <h4 class="font-bold text-xl mb-2 hover:text-red-800 transition cursor-pointer">Global Market Trends: Tech stocks stabilize after FRACT launch news.</h4>
+                                <span class="text-[10px] text-stone-400 font-bold uppercase">Business • 2m ago</span>
+                            </div>
+                            <div class="border-b border-stone-100 pb-6">
+                                <h4 class="font-bold text-xl mb-2 hover:text-red-800 transition cursor-pointer">The future of social media: Why context is king in 2026.</h4>
+                                <span class="text-[10px] text-stone-400 font-bold uppercase">Opinion • 1h ago</span>
+                            </div>
+                        </div>
+                        <div class="mt-10 bg-stone-100 p-6">
+                            <h4 class="font-black text-sm uppercase mb-2">Newsletter</h4>
+                            <p class="text-xs text-stone-500 mb-4">The morning's top stories, curated for your inbox.</p>
+                            <input type="text" placeholder="Email Address" class="w-full p-2 text-xs border border-stone-300 mb-2">
+                            <button class="w-full bg-black text-white text-xs font-bold py-2 uppercase tracking-widest">Sign Up</button>
+                        </div>
+                    </aside>
+                `;
+            } else {
+                // Category List Layout
+                filtered.forEach(a => {
+                    html += `
+                        <article class="lg:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-8 news-card p-6 items-center">
+                            <div class="md:col-span-4 overflow-hidden">
+                                <img src="${a.image}" alt="${a.title}" class="w-full h-64 object-cover">
+                            </div>
+                            <div class="md:col-span-8">
+                                <span class="text-red-700 font-black text-xs uppercase tracking-widest">${a.category}</span>
+                                <h2 class="text-3xl font-black mt-2 mb-4 leading-tight">${a.title}</h2>
+                                <div class="text-stone-700 leading-relaxed font-serif">
+                                    ${a.content}
+                                </div>
+                                <div class="mt-6 flex items-center text-xs font-bold text-stone-400 space-x-2 border-t border-stone-100 pt-4">
+                                    <span>BY ${a.author.toUpperCase()}</span>
+                                    <span>•</span>
+                                    <span>${a.time}</span>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                });
+            }
+            mainContent.innerHTML = html;
+        }
+
+        // Init
+        lucide.createIcons();
+        navigate('Home');
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions).toUpperCase();
+    </script>
 </body>
 </html>
